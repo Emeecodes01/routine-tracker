@@ -1,0 +1,72 @@
+ext {
+    rx_kotlin = '2.4.0'
+    rx_android = '2.1.1'
+    dagger_version = '2.25.2'
+    room_version = '2.2.1'
+    lifecycle_version = '2.1.0'
+    gson_version = '2.8.6'
+    joda_time_version = '2.10.3'
+    appcompact_version = '1.1.0'
+    constriant_layout_version = '1.1.3'
+    test_runner_version = '1.2.0'
+    expresso_version = '3.2.0'
+    work_version = '2.2.0'
+    material_app = '1.0.0'
+    recyclerview_version = '1.0.0'
+    time_date_version = '4.2.3'
+
+
+    androidDependencies = [
+            app_compact: "androidx.appcompat:appcompat:$appcompact_version",
+            android_ktx: "androidx.core:core-ktx:$appcompact_version",
+            constriant_layout: "androidx.constraintlayout:constraintlayout:$constriant_layout_version",
+    ]
+
+
+    testDependencies = [
+            junit_dep: "junit:junit:4.12"
+    ]
+
+
+    androidTestDependencies = [
+            test_runner_dep: "androidx.test:runner:$test_runner_version",
+            expresso_test_dep: "androidx.test.espresso:espresso-core:$expresso_version"
+    ]
+
+
+    rxDependancies = [
+            rx_kotlin_dep: "io.reactivex.rxjava2:rxkotlin:${rx_kotlin}",
+            rx_android_dep: "io.reactivex.rxjava2:rxandroid:${rx_android}"
+    ]
+
+    archComponentsDependancies = [
+            room_dep: "androidx.room:room-runtime:${room_version}",
+            room_rx_java: "androidx.room:room-rxjava2:$room_version",
+            lifecycle_dep: "androidx.lifecycle:lifecycle-extensions:${lifecycle_version}",
+            work_manager_dep: "androidx.work:work-rxjava2:$work_version"
+    ]
+
+
+    annotation_processors = [
+            room_complier: "androidx.room:room-compiler:${room_version}",
+            lifecycle_complier: "androidx.lifecycle:lifecycle-compiler:${lifecycle_version}",
+            dagger_complier: "com.google.dagger:dagger-compiler:${dagger_version}",
+            dagger_android_support: "com.google.dagger:dagger-android-processor:${dagger_version}",
+    ]
+
+    daggerDependancies = [
+            dagger_dep: "com.google.dagger:dagger:${dagger_version}",
+            dagger_android_dep: "com.google.dagger:dagger-android:${dagger_version}",
+            dagger_andriod_support_dep: "com.google.dagger:dagger-android-support:${dagger_version}"
+    ]
+
+    utilsDependencies = [
+            utils_dep: "net.danlew:android.joda:${joda_time_version}"
+    ]
+
+    uiDependencies = [
+            google_material_dep: "com.google.android.material:material:$material_app",
+            rv_dep: "androidx.recyclerview:recyclerview:$recyclerview_version",
+            date_time_picker: "com.wdullaer:materialdatetimepicker:$time_date_version"
+    ]
+}

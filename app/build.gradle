@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply from: '../dependencies.gradle'
+
+
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.mobigod.routinechecks"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //Android dependencies
+    implementation androidDependencies.values()
+    testImplementation testDependencies.values()
+    androidTestImplementation androidTestDependencies.values()
+
+    //Rx
+    implementation rxDependancies.values()
+
+    //Arch. Components
+    implementation archComponentsDependancies.values()
+
+    //Annotation processors
+    kapt annotation_processors.values()
+
+    //Dagger
+    implementation daggerDependancies.values()
+
+    //Utils
+    implementation utilsDependencies.values()
+
+    //UI
+    implementation uiDependencies.values()
+
+}
