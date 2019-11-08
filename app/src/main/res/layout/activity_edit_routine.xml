@@ -94,6 +94,7 @@
 
                     <CheckBox
                         android:id="@+id/is_recurring"
+                        android:enabled="false"
                         android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
