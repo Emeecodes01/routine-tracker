@@ -45,6 +45,7 @@
 
         <activity android:name=".features.routine.upcoming.UpComingActivity"
             android:theme="@style/NoActionBar"/>
+        <activity android:name=".features.routine.RoutinesDetailsActivity" />
 
         <receiver android:name=".utils.recievers.RoutineDoneBoardcastReceiver" />
 

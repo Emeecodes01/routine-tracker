@@ -59,4 +59,17 @@ class Repository @Inject constructor(var preferenceManager: PreferenceManager, v
     fun increaseRoutineCount() {
         preferenceManager.totalRoutineCount += 1
     }
+
+
+    fun getDoneRoutineCount() =
+        preferenceManager.totalDoneRoutineCount
+
+
+    fun getUnDoneRoutineCount() =
+        preferenceManager.totalUnDoneRoutineCount
+
+
+    fun getRoutineCount() =
+        preferenceManager.totalRoutineCount
+
 }

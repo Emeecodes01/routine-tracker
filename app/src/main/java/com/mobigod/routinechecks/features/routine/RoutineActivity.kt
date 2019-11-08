@@ -70,7 +70,7 @@ class RoutineActivity: BaseDatabindingActivity<RoutineActivityLayoutBinding>() {
 
         routineAdapter.routineAdapterListener = object : RoutineAdapter.RoutineAdapterInterface {
             override fun onRoutineClicked(routine: Routine) {
-                //Navigate to routine details page
+                RoutinesDetailsActivity.start(this@RoutineActivity)
             }
 
             override fun onEditRoutineClicked(routine: Routine) {

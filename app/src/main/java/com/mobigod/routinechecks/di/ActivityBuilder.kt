@@ -1,10 +1,7 @@
 package com.mobigod.routinechecks.di
 
 import com.mobigod.routinechecks.SplashActivity
-import com.mobigod.routinechecks.features.routine.AddRoutineActivity
-import com.mobigod.routinechecks.features.routine.RoutineActivity
-import com.mobigod.routinechecks.features.routine.RoutineModule
-import com.mobigod.routinechecks.features.routine.RoutineViewModel
+import com.mobigod.routinechecks.features.routine.*
 import com.mobigod.routinechecks.features.routine.upcoming.UpComingActivity
 import com.mobigod.routinechecks.utils.recievers.RoutineDoneBoardcastReceiver
 import dagger.Module
@@ -27,5 +24,8 @@ abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = [RoutineModule::class])
     abstract fun provideUpcomingActivityInjector(): UpComingActivity
+
+    @ContributesAndroidInjector(modules = [RoutineModule::class])
+    abstract fun provideRoutinesDetailsActivityInjector(): RoutinesDetailsActivity
 
 }

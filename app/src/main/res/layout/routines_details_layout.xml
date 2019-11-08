@@ -16,23 +16,25 @@
             android:layout_gravity="center_horizontal"
             android:padding="50dp"
             android:textSize="30sp"
+            android:id="@+id/percent_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="67% performance rate"/>
+            tools:text="67% performance rate"/>
 
 
         <ImageView
+            android:id="@+id/perform_mv"
             android:layout_gravity="center_horizontal"
             android:layout_width="100dp"
             android:layout_margin="20dp"
             android:layout_height="100dp"
-            android:src="@"/>
+            android:src="@drawable/ic_like"/>
 
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -88,6 +90,24 @@
 
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/message_tv"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Good Job"/>
+
+        <TextView
+            android:id="@+id/nextup_tv"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Your next routine is in 2 hours..."/>
 
     </LinearLayout>
 

@@ -28,6 +28,7 @@ class RoutineViewModel(repo: Repository, val schedulers: AppSchedulers): BaseVie
     val routineDbLiveData = MutableLiveData<Resource<String>>()
     val routineMainLiveData = MutableLiveData<Resource<List<Routine>>>()
     val routineB412hrsLiveData = MutableLiveData<Resource<List<Routine>>>()
+    val routinePendingLiveData = MutableLiveData<Resource<Int>>()
 
     fun setUpOnTimeWorkRequest(context: Context, routine: Routine) {
         //Create a 5mins b4 time
@@ -188,4 +189,49 @@ class RoutineViewModel(repo: Repository, val schedulers: AppSchedulers): BaseVie
             )
         )
     }
+
+
+    /**
+     * This gets the total pending routines
+     */
+    fun getPendingRoutine() {
+        compositeDisposable.add(repository.getAllRoutine()
+            .subscribeOn(schedulers.io())
+            .doOnSubscribe {
+                routinePendingLiveData.postValue(Resource.Loading())
+            }
+            .observeOn(schedulers.ui())
+            .subscribeBy (
+                onNext = {
+                    android.os.Handler().postDelayed(
+                        {
+                            val routines = it.filter { !it.isCancelled && !it.isDone
+                            }
+                            if (routines.isEmpty()) {
+                                routinePendingLiveData.postValue(Resource.Success(0))
+                            }else{
+                                routinePendingLiveData.postValue(Resource.Success(routines.count()))
+                            }
+
+                        }, 500
+                    )
+                },
+
+                onError = {
+                    android.os.Handler().postDelayed (
+                        {
+                            val errorMessage = getErrorMessage(it)
+                            routinePendingLiveData.postValue(Resource.Error(errorMessage))
+                        }, 500
+                    )
+
+                }
+
+            )
+        )
+    }
+
+    fun getAllRoutineCounts() =
+        listOf(repository.getRoutineCount(), repository.getDoneRoutineCount(), repository.getUnDoneRoutineCount())
+
 }
