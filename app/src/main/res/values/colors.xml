@@ -5,12 +5,12 @@
     <color name="colorAccent">@color/secondaryDarkColor</color>
 
 
-    <color name="primaryColor">#bbdefb</color>
+    <color name="primaryColor">#97CCFA</color>
     <color name="primaryLightColor">#eeffff</color>
     <color name="primaryDarkColor">#8aacc8</color>
     <color name="secondaryColor">#00838f</color>
     <color name="secondaryLightColor">#4fb3bf</color>
-    <color name="secondaryDarkColor">#005662</color>
+    <color name="secondaryDarkColor">#FFB300</color>
     <color name="primaryTextColor">#000000</color>
     <color name="secondaryTextColor">#ffffff</color>
 
@@ -19,8 +19,12 @@
     <color name="toolbar_background">@color/primaryColor</color>
     <color name="white">#ffffff</color>
 
+
     <color name="red">#EE0505</color>
+    <color name="red_dark">#B44747</color>
     <color name="blue">#1D33AA</color>
     <color name="green">#337A73</color>
+
+    <color name="yellow">#FDD835</color>
 
 </resources>

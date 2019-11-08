@@ -14,6 +14,7 @@ ext {
     material_app = '1.0.0'
     recyclerview_version = '1.0.0'
     time_date_version = '4.2.3'
+    stetho_version = '1.5.1'
 
 
     androidDependencies = [
@@ -68,5 +69,9 @@ ext {
             google_material_dep: "com.google.android.material:material:$material_app",
             rv_dep: "androidx.recyclerview:recyclerview:$recyclerview_version",
             date_time_picker: "com.wdullaer:materialdatetimepicker:$time_date_version"
+    ]
+
+    devToolsDependencies = [
+            stetho_dep: "com.facebook.stetho:stetho:$stetho_version"
     ]
 }

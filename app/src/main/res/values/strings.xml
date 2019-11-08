@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Routine Checks</string>
     <string name="enter_a_title">Enter a title</string>
+    <string name="Create">Create</string>
+    <string name="upcoming">UpComing</string>
+
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+    <string name="routine_check">Routine Check...</string>
 </resources>

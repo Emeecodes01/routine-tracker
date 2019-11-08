@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.mobigod.routinechecks">
 
     <application
@@ -9,7 +10,17 @@
         android:name=".RoutineApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+<!--        This is to disable the default work manager initializer-->
+        <provider
+            android:name="androidx.work.impl.WorkManagerInitializer"
+            android:authorities="${applicationId}.workmanager-init"
+            android:exported="false"
+            tools:node="remove"/>
+
+
         <activity android:name=".SplashActivity"
             android:theme="@style/NoStatusBar">
 
@@ -19,8 +30,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".features.routine.RoutineActivity" />
-        <activity android:name=".features.routine.AddRoutineActivity" />
+
+
+        <activity android:name=".features.routine.RoutineActivity"
+            android:theme="@style/NoActionBar">
+
+        </activity>
+
+
+        <activity android:name=".features.routine.AddRoutineActivity"
+            android:theme="@style/NoActionBar">
+
+        </activity>
+
+        <activity android:name=".features.routine.upcoming.UpComingActivity"
+            android:theme="@style/NoActionBar"/>
+
+        <receiver android:name=".utils.recievers.RoutineDoneBoardcastReceiver" />
+
     </application>
 
 </manifest>

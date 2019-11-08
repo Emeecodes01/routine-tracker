@@ -21,6 +21,7 @@ abstract class RoutineDb: RoomDatabase() {
             if (INSTANCE == null) {
                 synchronized(RoutineDb::class){
                     INSTANCE = Room.databaseBuilder(context.applicationContext, RoutineDb::class.java, "routine_db")
+                        .allowMainThreadQueries()
                         .build()
                 }
             }

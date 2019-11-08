@@ -4,6 +4,10 @@ import androidx.lifecycle.ViewModel
 import com.mobigod.routinechecks.data.Repository
 import io.reactivex.disposables.CompositeDisposable
 
+/**
+ * Sub class to all view models
+ * @see
+ */
 abstract class BaseViewModel(val repository: Repository): ViewModel() {
 
     protected var compositeDisposable: CompositeDisposable = CompositeDisposable()

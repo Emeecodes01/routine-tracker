@@ -63,4 +63,7 @@ dependencies {
     //UI
     implementation uiDependencies.values()
 
+    //DEV
+    implementation devToolsDependencies.values()
+
 }

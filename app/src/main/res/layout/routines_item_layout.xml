@@ -28,9 +28,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
+                android:checked="@{Routine.done}"
+                android:enabled="false"
                 android:layout_gravity="center_vertical"/>
 
             <LinearLayout
+                android:id="@+id/main_llayout"
                 android:paddingTop="7dp"
                 android:paddingBottom="5dp"
                 android:orientation="vertical"
@@ -39,7 +42,9 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/title_tv"
                     tools:text="Drink water"
+                    android:text="@{Routine.title}"
                     android:textSize="17sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -57,21 +62,25 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="01:00"
+                        tools:text="01:00"
+                        android:id="@+id/routine_time"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"/>
 
                     <ImageView
+                        android:layout_marginLeft="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_access_time_black_24dp"/>
 
                     <TextView
+                        android:id="@+id/routine_tag"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="01:00 ~ 10:00"/>
+                        android:textColor="@color/red"
+                        tools:text="missed"/>
 
                 </LinearLayout>
 
@@ -80,7 +89,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
-                    android:text="drink water daily it's good"/>
+                    android:text="@{Routine.description}"
+                    tools:text="drink water daily it's good"/>
 
             </LinearLayout>
 
@@ -88,14 +98,14 @@
             <FrameLayout
                 android:layout_gravity="center_vertical"
                 android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginRight="20dp">
+                android:layout_height="60dp">
 
                 <ImageView
+                    android:id="@+id/edit_routine"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_edit_black_24dp"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"/>
 
             </FrameLayout>
 
