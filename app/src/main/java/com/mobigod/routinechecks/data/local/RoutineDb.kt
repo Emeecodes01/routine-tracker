@@ -6,6 +6,7 @@ import androidx.room.RoomDatabase
 import com.mobigod.routinechecks.data.models.Routine
 import androidx.room.Room
 import androidx.room.TypeConverters
+import androidx.room.migration.Migration
 import com.mobigod.routinechecks.utils.converters.DateTimeTypeConverters
 
 

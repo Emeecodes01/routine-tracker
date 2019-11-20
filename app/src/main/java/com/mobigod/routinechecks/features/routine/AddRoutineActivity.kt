@@ -273,6 +273,8 @@ class AddRoutineActivity: BaseDatabindingActivity<ActivityEditRoutineBinding>(),
         return true
     }
 
+
+
     private fun validateUserInput() {
         if (binding.titleEd.text.isNotEmpty()) {
             routineCreator.setTitle(binding.titleEd.text.toString())
@@ -291,10 +293,10 @@ class AddRoutineActivity: BaseDatabindingActivity<ActivityEditRoutineBinding>(),
         }else {
             routineViewModel.setUpOnTimeWorkRequest(this, routine)
         }
-
         routineViewModel.saveRoutineInDb(routine)
-
     }
+
+
 
     companion object {
         fun start(context: Context){
