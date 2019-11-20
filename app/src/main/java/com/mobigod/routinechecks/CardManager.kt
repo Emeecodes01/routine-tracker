@@ -1,9 +1,11 @@
 import java.util.HashMap
 
+
 class CardManager {
-    val timeLimit = 60 //60Mins
+    private val timeLimit = 60 //60Mins, this can be java date and time lib
+
     //Getting or putting is a constant time operation,
-    val cardToNumOfUsageMap = HashMap<Card, Int>()//card to num of useage
+    private val cardToNumOfUsageMap = HashMap<Card, Int>()//card to num of useage, in real world this can be a DB
 
 
     fun makeTransaction(card: Card) {
@@ -14,7 +16,7 @@ class CardManager {
         var numOfUseage = cardToNumOfUsageMap[card]
         if (numOfUseage != null) {
             print("Number Of Useage: $numOfUseage")
-            if (numOfUseage < 3 && card.time <= 60) {
+            if (numOfUseage < 3 && card.time <= timeLimit) {
                 numOfUseage++
                 cardToNumOfUsageMap[card] = numOfUseage
                 print("\nTransaction made.....")
@@ -24,7 +26,6 @@ class CardManager {
             print("\nTransaction failed......\n")
         }
     }
-
 }
 
 data class Card(val time: Int)
