@@ -38,7 +38,7 @@ class RoutineViewModel(repo: Repository, val schedulers: AppSchedulers): BaseVie
         val reminderPoint = routine.startTime.minusMinutes(5)
         val cancellationPoint = routine.startTime.plusMinutes(5)
 
-        val reminderIntervalMilli = Interval(now, reminderPoint).toDurationMillis()
+        val reminderIntervalMilli = Interval(reminderPoint, now).toDurationMillis()
         val cancellationIntervalMilli = Interval(now, cancellationPoint).toDurationMillis()
         val actualIntervalMilli = Interval(now, routine.startTime).toDurationMillis()
 
